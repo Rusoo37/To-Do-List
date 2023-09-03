@@ -55,11 +55,11 @@
     width: 100%;
     border: none;
     border-radius: 5px 0 0 5px;
-    color: white;
+    color: rgb(30, 23, 23);
     background-color: #d6d1ce;
 }
 .input-text-task::placeholder {
-    color: white;
+    color: rgb(30, 23, 23);
 }
 .btn-part-home:hover {
     box-shadow: 0 0 10px 3px rgb(211, 200, 200);
