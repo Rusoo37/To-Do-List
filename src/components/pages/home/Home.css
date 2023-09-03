@@ -1,0 +1,85 @@
+.box-home {
+    width: 100%;
+    height: 100vh;
+    background: url("https://res.cloudinary.com/dqonbozpq/image/upload/v1693665714/pexels-photo-417074_le3erx.jpg");
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-box-home {
+    width: 70%;
+    height: 80%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+.container-part-home {
+    width: 70%;
+    height: 90%;
+    border-radius: 10px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.tareas-part-home {
+    height: 80%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    max-height: 30rem;
+    overflow-y: scroll;
+    margin-bottom: 1rem;
+}
+.btn-part-home {
+    width: 90%;
+    height: 15%;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.input-text-task {
+    height: 100%;
+    padding: 0 0 0 10px;
+    width: 100%;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    color: white;
+    background-color: #d6d1ce;
+}
+.input-text-task::placeholder {
+    color: white;
+}
+.btn-part-home:hover {
+    box-shadow: 0 0 10px 3px rgb(211, 200, 200);
+}
+.btn-text-task {
+    height: 100%;
+    width: 10%;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: #d6d1ce;
+}
+.btn-text-task:hover {
+    background-color: rgb(237, 237, 237);
+}
+.separator-btn-home {
+    width: 1px;
+    height: 70%;
+    cursor: pointer;
+    color: white;
+    background-color: white;
+}

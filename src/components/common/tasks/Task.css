@@ -1,0 +1,31 @@
+.container-task {
+    width: 90%;
+    display: flex;
+    gap: 1rem;
+    background-color: #f0e6e0;
+    border-radius: 5px;
+    padding: 5px;
+}
+.container-task:hover {
+    box-shadow: 0 0 5px 3px rgb(202, 184, 184);
+    cursor: pointer;
+}
+.date-task {
+    color: #93908f;
+    font-size: 0.7rem;
+}
+.container-info-task {
+    width: 78%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+.btn-task {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
