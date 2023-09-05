@@ -11,6 +11,7 @@ const Home = ({
     deleteTask,
     addDoneTask,
     deleteDoneTask,
+    infoBtn,
 }) => {
     return (
         <div className="box-home">
@@ -36,6 +37,7 @@ const Home = ({
                         <input
                             type="text"
                             id="task"
+                            name="task"
                             placeholder="Write a new task.."
                             className="input-text-task"
                             onChange={handleChange}

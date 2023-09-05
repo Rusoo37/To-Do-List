@@ -6,7 +6,7 @@ import { useFormik } from "formik";
 const HomeContainer = () => {
     const [tasksDelete, setTasksDelete] = useState([]);
     const [tasksDone, setTasksDone] = useState([]);
-
+    const [infoBtn, setInfoBtn] = useState("");
     const [tasksArray, setTasks] = useState(
         JSON.parse(localStorage.getItem("tasks")) || []
     );
@@ -32,6 +32,8 @@ const HomeContainer = () => {
                     JSON.stringify([...tasksArray, newTask])
                 );
                 setTasks([...tasksArray, newTask]);
+                console.log(task.value);
+                task.value = "";
             }
         },
         onChange: (data) => {
@@ -72,6 +74,7 @@ const HomeContainer = () => {
                 deleteTask={deleteTask}
                 addDoneTask={addDoneTask}
                 deleteDoneTask={deleteDoneTask}
+                infoBtn={infoBtn}
             />
         </>
     );
