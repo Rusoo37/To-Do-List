@@ -2,13 +2,13 @@
     width: 90%;
     display: flex;
     gap: 1rem;
-    background-color: #f0e6e0;
+    background-color: #fff;
+    border: 2px solid #e1e1e1;
     border-radius: 5px;
     padding: 5px;
 }
 .container-task:hover {
-    box-shadow: 0 0 5px 3px rgb(202, 184, 184);
-    cursor: pointer;
+    box-shadow: 0 0 10px 1px rgb(202, 184, 184);
 }
 .date-task {
     color: #93908f;

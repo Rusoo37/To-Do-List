@@ -1,80 +1,61 @@
 import { useState } from "react";
 import Home from "./Home";
-import * as Yup from "yup";
-import { useFormik } from "formik";
+import { v4 as uuidv4 } from "uuid";
 
 const HomeContainer = () => {
-    const [tasksDelete, setTasksDelete] = useState([]);
-    const [tasksDone, setTasksDone] = useState([]);
-    const [infoBtn, setInfoBtn] = useState("");
-    const [tasksArray, setTasks] = useState(
+    const [tasks, setTasks] = useState(
         JSON.parse(localStorage.getItem("tasks")) || []
     );
-    const { handleSubmit, handleChange, errors } = useFormik({
-        initialValues: {
-            task: "",
-        },
-        onSubmit: (data) => {
-            let date = new Date();
-            let newTask = {
-                id: Math.random(),
-                order: data,
-                day: date.getDay(),
-            };
-            const existe = tasksArray.some(
-                (elemento) => elemento.order == task
-            );
-            if (existe) {
-                alert("Esta tarea ya esta puesta");
-            } else {
-                localStorage.setItem(
-                    "tasks",
-                    JSON.stringify([...tasksArray, newTask])
-                );
-                setTasks([...tasksArray, newTask]);
-                console.log(task.value);
-                task.value = "";
-            }
-        },
-        onChange: (data) => {
-            setUserData({ ...userData, [e.target.name]: e.target.value });
-        },
-        validationSchema: Yup.object({
-            task: Yup.string().required("Este campo es obligatorio"),
-        }),
-        validateOnChange: false,
-    });
+    const addToDo = (todo) => {
+        const newArray = [
+            ...tasks,
+            { id: uuidv4(), task: todo, completed: false, isEditing: false },
+        ];
+        setTasks(newArray);
+        localStorage.setItem("tasks", JSON.stringify(newArray));
+    };
 
-    const deleteTask = ({ task }) => {
-        setTasksDelete([...tasksDelete, task]);
-        const newArr = tasksArray;
-        const itemIndex = tasksArray.findIndex((el) => el.order.task === task);
-        newArr.splice(itemIndex, 1);
+    const deleteTask = (id) => {
+        const newArr = tasks.filter((el) => el.id !== id);
         localStorage.setItem("tasks", JSON.stringify(newArr));
         setTasks(newArr);
     };
 
-    const addDoneTask = (task) => {
-        setTasksDone([...tasksDone, task]);
+    const toggleComplete = (id) => {
+        setTasks(
+            tasks.map((todo) =>
+                todo.id === id ? { ...todo, completed: !todo.completed } : todo
+            )
+        );
     };
-    const deleteDoneTask = (task) => {
-        const newArr = tasksDone;
-        const itemIndex = tasksDone.findIndex((el) => el.id === task.id);
-        newArr.splice(itemIndex, 1);
-        setTasksDone(newArr);
+
+    const editTodo = (id) => {
+        setTasks(
+            tasks.map((todo) =>
+                todo.id === id ? { ...todo, isEditing: !todo.isEditing } : todo
+            )
+        );
+    };
+
+    const editTask = (task, id) => {
+        const newTasks = tasks.map((todo) =>
+            todo.id === id
+                ? { ...todo, task, isEditing: !todo.isEditing }
+                : todo
+        );
+        setTasks(newTasks);
+        localStorage.setItem("tasks", JSON.stringify(newTasks));
     };
 
     return (
         <>
             <Home
-                handleSubmit={handleSubmit}
-                handleChange={handleChange}
-                errors={errors}
-                tasksArray={tasksArray}
+                tasks={tasks}
+                addToDo={addToDo}
                 deleteTask={deleteTask}
-                addDoneTask={addDoneTask}
-                deleteDoneTask={deleteDoneTask}
-                infoBtn={infoBtn}
+                editTodo={editTodo}
+                editTask={editTask}
+                toggleComplete={toggleComplete}
             />
         </>
     );

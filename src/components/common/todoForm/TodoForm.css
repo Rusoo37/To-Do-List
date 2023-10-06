@@ -1,0 +1,38 @@
+.btn-part-home {
+    width: 90%;
+    height: 15%;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #0055f9;
+    border-radius: 5px 7px 7px 5px;
+}
+.input-text-task {
+    height: 100%;
+    padding: 0 0 0 10px;
+    width: 100%;
+    border-radius: 5px 0 0 5px;
+    background-color: #ffffff;
+    border: none;
+}
+.input-text-task::placeholder {
+    color: rgb(30, 23, 23);
+}
+.btn-part-home:hover {
+    box-shadow: 0 0 10px 1px #667fb1;
+}
+.btn-text-task {
+    height: 100%;
+    width: 20%;
+    border: 1px solid #0055f9;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: 0.3s;
+    color: white;
+    background-color: #0055f9;
+}
+.btn-text-task:hover {
+    background-color: #2a53a5;
+}

@@ -1,0 +1,32 @@
+.btn-edit-home {
+    width: 90%;
+    height: 15%;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-edit-home:hover {
+    box-shadow: 0 0 10px 1px rgb(211, 200, 200);
+}
+.input-edit-task {
+    height: 100%;
+    padding: 0 0 0 10px;
+    width: 100%;
+    border: 2px solid #e1e1e1;
+    border-right: none;
+    border-radius: 5px 0 0 5px;
+    color: rgb(30, 23, 23);
+    background-color: #fff;
+}
+.btn-edit {
+    height: 110%;
+    width: 20%;
+    border: 2px solid #0055f9;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: #0055f9;
+    color: white;
+}
